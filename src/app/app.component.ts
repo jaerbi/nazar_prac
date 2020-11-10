@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'nazarPract';
+  title = 'nazarPract'; 
+  
+  private _getSum(value: OrderPrice[]): number {
+        if (!value) { return; }
+
+        const total = value.reduce((previousValue: number, currentValue: OrderPrice) => {
+            return previousValue + currentValue.total;
+        }, 0);
+
+        return total;
+    }
 }
